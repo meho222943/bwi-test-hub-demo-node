@@ -5,6 +5,10 @@ version: 1
 name: node-test-demo
 command:
   argv: ["node", "run.mjs"]
+# Deny-by-default environment: inherit PATH so node resolves on any
+# runner, not just where it happens to sit in the default PATH.
+environment:
+  inherit: ["PATH"]
 timeout:
   durationSeconds: 120
 reportArtifacts:
