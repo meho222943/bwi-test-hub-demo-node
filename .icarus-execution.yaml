@@ -1,0 +1,16 @@
+# Node.js + node:test demo for the BWI Test Hub.
+# No runtime profile ⇒ runs as a host process (DIRECT_PROCESS), needs
+# only node (>= 20) — no container runtime required.
+version: 1
+name: node-test-demo
+command:
+  argv: ["node", "run.mjs"]
+timeout:
+  durationSeconds: 120
+reportArtifacts:
+  - kind: html-report
+    path: report/index.html
+    description: node:test HTML report
+  - kind: junit-xml
+    path: report/junit.xml
+    description: JUnit results
