@@ -1,13 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-
-function add(a, b) {
-  return a + b;
-}
-
-function unique(arr) {
-  return [...new Set(arr)];
-}
+import { add, unique } from "../src/helpers.mjs";
 
 test("addition", () => {
   assert.equal(add(2, 2), 4);
